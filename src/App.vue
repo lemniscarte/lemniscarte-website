@@ -1,9 +1,12 @@
 <template>
-  <div id="app" v-hammer:swipe="onSwipe">
+  <div id="app" v-hammer:swipe.left="onSwipe" v-hammer:swipe.right="onSwipe">
     <TopMenu @pageWasChanged="selectedComponent = $event"/>
-    <keep-alive>
-      <component :is="this.selectedComponent"></component>
-    </keep-alive>
+    <transition name="component-fade" mode="out-in">
+      <keep-alive>
+        <component :is="this.selectedComponent"></component>
+      </keep-alive>
+    </transition>
+    <BottomBar/>
   </div>
 </template>
 
@@ -12,7 +15,7 @@ window.scrollTo(0, 1);
 
 import Bio from "./components/Bio.vue";
 import Contact from "./components/Contact.vue";
-import Footer from "./components/Footer.vue";
+import BottomBar from "./components/BottomBar.vue";
 import TopMenu from "./components/TopMenu.vue";
 import MainPage from "./components/MainPage.vue";
 import MusicPlayer from "./components/MusicPlayer.vue";
@@ -29,7 +32,7 @@ export default {
   components: {
     Bio,
     Contact,
-    Footer,
+    BottomBar,
     TopMenu,
     MainPage,
     MusicPlayer,
@@ -38,25 +41,21 @@ export default {
   methods: {
     onSwipe(ev) {
       if (ev.direction === 2) {
-        let currentSelection = this.componentsList.indexOf(
-          this.selectedComponent
-        );
-        if (currentSelection < this.componentsList.length - 1) {
-          currentSelection++;
+        let selection = this.currentSelection;
+        if (selection < this.componentsListLength) {
+          selection++;
         } else {
-          currentSelection = 0;
+          selection = 0;
         }
-        this.selectedComponent = this.componentsList[currentSelection];
+        this.selectedComponent = this.componentsList[selection];
       }
       if (ev.direction === 4) {
-        let currentSelection = this.componentsList.indexOf(
-          this.selectedComponent
-        );
-        currentSelection--;
-        if (currentSelection < 0) {
-          currentSelection = this.componentsList.length - 1;
+        let selection = this.currentSelection;
+        selection--;
+        if (selection < 0) {
+          selection = this.componentsListLength;
         }
-        this.selectedComponent = this.componentsList[currentSelection];
+        this.selectedComponent = this.componentsList[selection];
       }
     }
   },
@@ -79,5 +78,20 @@ body {
   color: rgba(42, 42, 42, 0.75);
   font-family: "Nunito", sans-serif;
   font-weight: 300;
+  touch-action: pan-y !important;
+}
+
+.component-fade-enter-active,
+.component-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.component-fade-enter,
+.component-fade-leave-to {
+  opacity: 0;
+}
+
+.debug {
+  border: 1px red solid;
 }
 </style>

@@ -16,9 +16,6 @@
       <div class="right">
       </div> 
     </div>
-    <!-- <div id="footer-bar">
-      test
-    </div> -->
   </div>
 </template>
 
@@ -65,18 +62,6 @@ h1 {
   padding: 0px 20px;
 }
 
-/* #footer-bar {
-  font-family: Roboto;
-  font-size: 0.5em;
-  display: grid;
-  grid-template: 1fr;
-  height: 2em;
-  text-align: center;
-  font-size: 0.5em;
-  position: absolute;
-  bottom: 0;
-} */
-
 .left {
   text-align: left;
   grid-area: left;
@@ -90,9 +75,5 @@ h1 {
 .right {
   text-align: right;
   grid-area: right;
-}
-
-.debug {
-  border: 1px red solid;
 }
 </style>
