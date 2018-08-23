@@ -1,11 +1,21 @@
 <template>
-  <div id="app" v-hammer:swipe.left="onSwipe" v-hammer:swipe.right="onSwipe">
-    <TopMenu @pageWasChanged="selectedComponent = $event"/>
-    <transition name="component-fade" mode="out-in">
-      <keep-alive>
-        <component :is="this.selectedComponent"></component>
-      </keep-alive>
-    </transition>
+  <div id="app" v-hammer:swipe="onSwipe">
+    <TopMenu @pageWasChanged="clickPageChange($event)"/>
+    <div id="app-wrapper">
+      <div class="left">
+      </div>
+      <div class="center">
+        <div id="spacer"></div>
+        <transition :name="animationType" mode="out-in">
+          <!-- <keep-alive> -->
+            <component :is="this.selectedComponent">
+            </component>
+          <!-- </keep-alive> -->
+        </transition>
+      </div>
+      <div class="right">
+      </div> 
+    </div>
     <BottomBar/>
   </div>
 </template>
@@ -26,7 +36,8 @@ export default {
   data() {
     return {
       selectedComponent: "MainPage",
-      componentsList: ["MainPage", "MusicPlayer", "Sounds", "Bio", "Contact"]
+      componentsList: ["MainPage", "MusicPlayer", "Sounds", "Bio", "Contact"],
+      animationType: ""
     };
   },
   components: {
@@ -47,6 +58,7 @@ export default {
         } else {
           selection = 0;
         }
+        this.animationType = "left";
         this.selectedComponent = this.componentsList[selection];
       }
       if (ev.direction === 4) {
@@ -55,8 +67,13 @@ export default {
         if (selection < 0) {
           selection = this.componentsListLength;
         }
+        this.animationType = "right";
         this.selectedComponent = this.componentsList[selection];
       }
+    },
+    clickPageChange(ev) {
+      this.selectedComponent = ev;
+      this.animationType = "fade";
     }
   },
   computed: {
@@ -66,6 +83,9 @@ export default {
     componentsListLength() {
       return this.componentsList.length - 1;
     }
+    // addActiveClass() {
+
+    // }
   }
 };
 </script>
@@ -81,17 +101,50 @@ body {
   touch-action: pan-y !important;
 }
 
-.component-fade-enter-active,
-.component-fade-leave-active {
-  transition: opacity 0.3s ease;
+#app {
+  height: 100vh;
 }
 
-.component-fade-enter,
-.component-fade-leave-to {
+h1 {
+  font-size: calc(3vw + 4vh);
+  font-weight: 300;
+  text-shadow: 0 2px 4vh rgba(0, 0, 0, 0.15);
+}
+
+.left-enter-active,
+.left-leave-active,
+.right-enter-active,
+.right-leave-active {
+  transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+.left-enter,
+.right-leave-to {
+  transform: translate3d(100px, 0, 0);
+  opacity: 0;
+}
+
+.left-leave-to,
+.right-enter {
+  transform: translate3d(-100px, 0, 0);
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 
 .debug {
-  border: 1px red solid;
+  border: 5px red solid;
 }
+
+/* div {
+  border: 1px red solid;
+} */
 </style>

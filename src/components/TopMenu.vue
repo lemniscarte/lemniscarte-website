@@ -1,26 +1,20 @@
 <template>
   <div id="top-menu">
     <ul>
-      <li @click="changePage('MainPage')">HOME</li>
-      <li @click="changePage('MusicPlayer')">MUSIC</li>
-      <li @click="changePage('Sounds')">SOUNDS</li>
-      <li @click="changePage('Bio')">BIO</li>
-      <li @click="changePage('Contact')">CONTACT</li>
+      <li class= "main-page" @click="changePage('MainPage')">HOME</li>
+      <li class= "music-player" @click="changePage('MusicPlayer')">MUSIC</li>
+      <li class= "sounds" @click="changePage('Sounds')">SOUNDS</li>
+      <li class= "bio" @click="changePage('Bio')">BIO</li>
+      <li class= "contact" @click="changePage('Contact')">CONTACT</li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      currentComponent: ""
-    };
-  },
   methods: {
     changePage(pageName) {
-      this.currentComponent = pageName;
-      this.$emit("pageWasChanged", this.currentComponent);
+      this.$emit("pageWasChanged", pageName);
     }
   }
 };
@@ -37,6 +31,7 @@ export default {
   border: solid 1px rgb(42, 42, 42);
   background-color: rgb(42, 42, 42);
   color: rgb(209, 209, 209);
+  box-shadow: 0 -10px 100px 5px rgba(0, 0, 0, 0.513);
 }
 
 ul {
@@ -49,5 +44,9 @@ li {
   display: inline;
   padding: 0px 10px;
   user-select: none;
+}
+
+li:hover {
+  cursor: pointer;
 }
 </style>

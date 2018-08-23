@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "vue": "^2.5.17",
+    "vue-howler": "^0.7.0",
     "vue2-hammer": "^2.0.1"
   },
   "devDependencies": {

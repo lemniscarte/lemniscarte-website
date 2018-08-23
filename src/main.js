@@ -4,7 +4,8 @@ import App from "./App.vue";
 import { VueHammer } from "vue2-hammer";
 
 VueHammer.config.swipe = {
-  direction: "horizontal"
+  direction: "horizontal",
+  threshold: 50
 };
 
 Vue.use(VueHammer);
