@@ -31,7 +31,9 @@ export default {
   height: 3em;
   text-align: center;
   font-size: 0.8em;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   border: solid 1px rgb(42, 42, 42);
   background-color: rgb(42, 42, 42);
   color: rgb(209, 209, 209);
