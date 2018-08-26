@@ -7,14 +7,14 @@
       <div class="center">
         <div id="spacer"></div>
         <transition :name="animationType" mode="out-in">
-          <!-- <keep-alive> -->
+          <keep-alive>
             <component :is="this.selectedComponent">
             </component>
-          <!-- </keep-alive> -->
+          </keep-alive>
         </transition>
       </div>
       <div class="right">
-      </div> 
+      </div>
     </div>
     <BottomBar/>
   </div>
@@ -105,6 +105,18 @@ body {
   height: 100vh;
 }
 
+#app-wrapper {
+  display: grid;
+  grid-template-areas: "left center right";
+  grid-template-columns: minmax(1px, 1fr) minmax(300px, 800px) minmax(1px, 1fr);
+  /* border: 1px rgb(30, 255, 0) solid; */
+}
+
+#spacer {
+  height: calc(4vw + 4vh);
+  /* border: 1px yellow solid; */
+}
+
 h1 {
   font-size: calc(3vw + 4vh);
   font-weight: 300;
@@ -115,18 +127,18 @@ h1 {
 .left-leave-active,
 .right-enter-active,
 .right-leave-active {
-  transition: transform 0.3s ease, opacity 0.25s ease;
+  transition: transform 0.3s ease, opacity 0.25s ease, scale 0.25s ease;
 }
 
 .left-enter,
 .right-leave-to {
-  transform: translate3d(100px, 0, 0);
+  transform: translate3d(75px, 0, 0);
   opacity: 0;
 }
 
 .left-leave-to,
 .right-enter {
-  transform: translate3d(-100px, 0, 0);
+  transform: translate3d(-75px, 0, 0);
   opacity: 0;
 }
 
@@ -138,6 +150,25 @@ h1 {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+.left {
+  text-align: left;
+  grid-area: left;
+  /* border: 1px blue solid; */
+}
+
+.center {
+  text-align: center;
+  grid-area: center;
+  overflow: hidden;
+  /* border: 1px purple solid; */
+}
+
+.right {
+  text-align: right;
+  grid-area: right;
+  /* border: 1px black solid; */
 }
 
 .debug {

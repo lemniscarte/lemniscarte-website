@@ -10,7 +10,7 @@
       }
     ]
   },
-  "alias": "lemniscarte-test",
+  "alias": "lemniscarte",
   "files": [
     "dist"
   ]

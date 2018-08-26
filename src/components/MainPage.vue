@@ -26,19 +26,9 @@ body {
   padding: 0;
 }
 
-#spacer {
-  height: calc(4vw + 4vh);
-}
-
 #img-holder {
   height: calc(4vw + 4vh + 30px);
   vertical-align: middle;
-}
-
-#app-wrapper {
-  display: grid;
-  grid-template-areas: "left center right";
-  grid-template-columns: minmax(1px, 1fr) minmax(300px, 800px) minmax(1px, 1fr);
 }
 
 .blurb {
@@ -46,20 +36,5 @@ body {
   text-align: center;
   height: 100%;
   padding: 0px 20px;
-}
-
-.left {
-  text-align: left;
-  grid-area: left;
-}
-
-.center {
-  text-align: center;
-  grid-area: center;
-}
-
-.right {
-  text-align: right;
-  grid-area: right;
 }
 </style>
