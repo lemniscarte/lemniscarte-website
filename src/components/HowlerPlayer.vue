@@ -1,11 +1,16 @@
 <template>
 <div>
-  <p>test123 music player goes here</p>
-  <span>Total duration: {{ duration }} seconds</span>
+  <p>Music Player</p>
+  <span>Song duration: {{ duration | musicTime }}</span>
+  <br>
   <span>Progress: {{ Math.round(progress * 100) }}%</span>
+  <br>
   <button @click="togglePlayback">{{ playing ? 'Pause' : 'Play' }}</button>
+  <br>
   <button @click="stop">Stop</button>
-  <button @click="setRate(2.9)">rate</button>
+  <br> 
+  <button @click="setRate(0.7)">rate</button>
+  <br>
 </div>
 </template>
 

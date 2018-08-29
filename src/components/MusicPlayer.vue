@@ -15,10 +15,10 @@ export default {
   data() {
     return {
       oggFiles: [
-        "2.ogg",
-        "./assets/music/nevertook.mp3",
-        "./assets/music/percloop.wav",
-        "./assets/music/warpstage.aif"
+        "./warpstage.aif",
+        "./nevertook.mp3",
+        "./2.ogg",
+        "./percloop.wav"
       ]
     };
   }
