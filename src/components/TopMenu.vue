@@ -1,11 +1,11 @@
 <template>
   <div id="top-menu">
     <ul>
-      <li class= "main-page" @click="changePage('MainPage')">HOME</li>
-      <li class= "music-player" @click="changePage('MusicPlayer')">MUSIC</li>
-      <li class= "sounds" @click="changePage('Sounds')">SOUNDS</li>
-      <li class= "bio" @click="changePage('Bio')">BIO</li>
-      <li class= "contact" @click="changePage('Contact')">CONTACT</li>
+      <li @click="changePage('MainPage')">HOME</li>
+      <li @click="changePage('MusicPlayer')">MUSIC</li>
+      <li @click="changePage('Sounds')">SOUNDS</li>
+      <li @click="changePage('Bio')">BIO</li>
+      <li @click="changePage('Contact')">CONTACT</li>
     </ul>
   </div>
 </template>

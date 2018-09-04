@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>music</h1>
-  <HowlerPlayer :sources="oggFiles" rate="0.4"/>
+  <HowlerPlayer :sources="currentMusic" @skipTrack="changeTrack(event)"/>
 </div>
 </template>
 
@@ -14,13 +14,24 @@ export default {
   },
   data() {
     return {
-      oggFiles: [
+      allMusic: [
         "./warpstage.aif",
         "./nevertook.mp3",
         "./2.ogg",
         "./percloop.wav"
-      ]
+      ],
+      selectedTrack: 0
     };
+  },
+  methods: {
+    changeTrack(ev) {
+      
+    }
+  },
+  computed: {
+    currentMusic() {
+      return this.allMusic[this.selectedTrack];
+    }
   }
 };
 </script>

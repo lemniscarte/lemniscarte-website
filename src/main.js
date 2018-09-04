@@ -14,8 +14,8 @@ Vue.config.productionTip = false;
 
 Vue.filter("musicTime", function(value) {
   let h = parseInt(Math.floor(value / 360));
-  let m = parseInt(Math.floor((value - (h * 360)) / 60)); 
-  let s = parseInt((value - ((h * 360) + (m * 60))) % 60); 
+  let m = parseInt(Math.floor((value - h * 360) / 60));
+  let s = parseInt((value - (h * 360 + m * 60)) % 60);
 
   // let dHours = h > 9 ? h : "0" + h;
   let dMins = m > 9 ? m : "0" + m;
