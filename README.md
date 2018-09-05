@@ -1,4 +1,5 @@
 # lemniscarte-website
+<<<<<<< HEAD
 
 ## Project setup
 ```
@@ -19,3 +20,6 @@ npm run build
 ```
 npm run lint
 ```
+=======
+website for lemniscarte.com
+>>>>>>> 763b47e0f2b5b156c3c2b9ad6df87e6719414b98
