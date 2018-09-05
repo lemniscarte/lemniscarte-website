@@ -2,7 +2,7 @@
   <div id="top-menu">
     <ul>
       <li @click="changePage('MainPage')">HOME</li>
-      <li @click="changePage('MusicPlayer')">MUSIC</li>
+      <li @click="changePage('Music')">MUSIC</li>
       <li @click="changePage('Sounds')">SOUNDS</li>
       <li @click="changePage('Bio')">BIO</li>
       <li @click="changePage('Contact')">CONTACT</li>

@@ -28,7 +28,7 @@ import Contact from "./components/Contact.vue";
 import BottomBar from "./components/BottomBar.vue";
 import TopMenu from "./components/TopMenu.vue";
 import MainPage from "./components/MainPage.vue";
-import MusicPlayer from "./components/MusicPlayer.vue";
+import Music from "./components/Music.vue";
 import Sounds from "./components/Sounds.vue";
 
 export default {
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       selectedComponent: "MainPage",
-      componentsList: ["MainPage", "MusicPlayer", "Sounds", "Bio", "Contact"],
+      componentsList: ["MainPage", "Music", "Sounds", "Bio", "Contact"],
       animationType: ""
     };
   },
@@ -46,7 +46,7 @@ export default {
     BottomBar,
     TopMenu,
     MainPage,
-    MusicPlayer,
+    Music,
     Sounds
   },
   methods: {
