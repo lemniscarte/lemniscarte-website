@@ -21,20 +21,8 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0;
-  padding: 0;
-}
-
 #img-holder {
   height: calc(4vw + 4vh + 30px);
   vertical-align: middle;
-}
-
-.blurb {
-  display: grid;
-  text-align: center;
-  height: 100%;
-  padding: 0px 20px;
 }
 </style>

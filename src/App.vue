@@ -99,6 +99,8 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 300;
   touch-action: pan-y !important;
+  margin: 0;
+  padding: 0;
 }
 
 #app {
@@ -121,6 +123,13 @@ h1 {
   font-size: calc(3vw + 4vh);
   font-weight: 300;
   text-shadow: 0 2px 4vh rgba(0, 0, 0, 0.15);
+}
+
+.blurb {
+  display: grid;
+  text-align: center;
+  height: 100%;
+  padding: 0px 20px;
 }
 
 .left-enter-active,
