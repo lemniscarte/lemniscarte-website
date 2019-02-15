@@ -1,17 +1,8 @@
 {
   "name": "lemniscarte",
-  "type": "static",
-  "static": {
-    "public": "dist",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
   "alias": "lemniscarte",
   "files": [
     "dist"
-  ]
+  ],
+  "version": 2
 }

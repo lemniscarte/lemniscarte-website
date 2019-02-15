@@ -104,6 +104,10 @@ body {
   padding: 0;
 }
 
+ul {
+  padding-left: 0;
+}
+
 #app {
   height: 100vh;
 }
@@ -121,7 +125,7 @@ body {
 h1 {
   font-size: calc(3vw + 4vh);
   font-weight: 300;
-  text-shadow: 0 2px 4vh rgba(0, 0, 0, 0.15);
+  text-shadow: 0 10px 4vh rgba(0, 0, 0, 1);
 }
 
 .blurb {
