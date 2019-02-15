@@ -1,11 +1,11 @@
 <template>
   <div id="top-menu">
     <ul>
-      <li @click="changePage('MainPage')">HOME</li>
-      <li @click="changePage('Music')">MUSIC</li>
-      <li @click="changePage('Sounds')">SOUNDS</li>
-      <li @click="changePage('Bio')">BIO</li>
-      <li @click="changePage('Contact')">CONTACT</li>
+      <li class="menu-btn" @click="changePage('MainPage')">HOME</li>
+      <li class="menu-btn" @click="changePage('Music')">MUSIC</li>
+      <li class="menu-btn" @click="changePage('Sounds')">SOUNDS</li>
+      <li class="menu-btn" @click="changePage('Bio')">BIO</li>
+      <li class="menu-btn" @click="changePage('Contact')">CONTACT</li>
     </ul>
   </div>
 </template>
@@ -28,17 +28,23 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
-  border: solid 1px rgb(42, 42, 42);
+  /* border: solid 1px rgb(42, 42, 42); */
   background-color: rgb(42, 42, 42);
   color: rgb(209, 209, 209);
   box-shadow: 0 -10px 100px 5px rgba(0, 0, 0, 0.513);
 }
 
-ul {
+button menu-btn {
+  padding: 0;
+  border: 0;
+  border-radius: initial;
+}
+
+/* ul {
   list-style-type: none;
   padding: 0px 0px;
   user-select: none;
-}
+} */
 
 li {
   display: inline;

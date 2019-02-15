@@ -1,15 +1,15 @@
 <template>
 <div>
-  <button @click="togglePlayback()">{{ isPlaying ? 'HOLD' : 'PLAY' }}</button>
-  <button @click="stopPlayback()">STOP</button>
-  <button @click="switchTrack('next')">NEXT</button>
-  <button @click="switchTrack('back')">BACK</button>
+  <button class="music-btn" @click="togglePlayback()">{{ isPlaying ? 'HOLD' : 'PLAY' }}</button>
+  <button class="music-btn" @click="stopPlayback()">STOP</button>
+  <button class="music-btn" @click="switchTrack(-1)">BACK</button>
+  <button class="music-btn" @click="switchTrack(1)">NEXT</button>
   <br>
   <br>
   <br>
   <!-- <span class="song-info">Progress: {{ Math.round(progress * 100) }}%</span> -->
   <br>
-  <!-- <span class="song-info">{{ duration | musicTime }}</span> -->
+  <span class="song-info">{{ duration | musicTime }}</span>
   <br>
 </div>
 </template>
@@ -22,7 +22,8 @@ export default {
     return {
       sound: "",
       isPlaying: false,
-      allMusic: [["nevertook.mp3"], ["test123.mp3"], ["anothertest.mp3"]]
+      allMusic: [["bananaclip.mp3"], ["islandshame.mp3"], ["nevertook.mp3"]],
+      musicSelection: 0
     };
   },
   props: [],
@@ -36,14 +37,24 @@ export default {
       this.sound.stop();
     },
     switchTrack(mod) {
-      console.log(mod);
+      return this.musicSelection + mod;
     },
     createHowler() {
       return new Howl({
-        src: this.allMusic[0],
+        src: this.allMusic[this.musicSelection],
         html5: true
-      })
+      });
     }
+  },
+  computed: {
+    duration: function() {
+      return this.sound.duration();
+    }
+    // currentTrack: function(mod) {
+    //   let trackNumber = 0;
+    //   let newTrack = tracknumber + mod;
+    //   return newTrack;
+    // }
   },
   created() {
     this.sound = this.createHowler();
@@ -60,7 +71,7 @@ button {
   color: rgba(42, 42, 42, 0.75);
   border: 0;
   border-radius: 100%;
-  font-size: 3vmin;
+  font-size: 2vmin;
   font-family: "Nunito";
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.4);
   transition: all ease 0.4s;

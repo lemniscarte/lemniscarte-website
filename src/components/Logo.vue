@@ -87,7 +87,7 @@ svg {
   stroke-dashoffset: 358px;
   animation: dash 6s ease-in-out forwards;
   stroke-width: 2;
-  filter: url(#dropshadow);
+  /* filter: url(#dropshadow); */
 }
 
 .first {
@@ -139,7 +139,7 @@ svg {
   to {
     stroke-dashoffset: 0;
     stroke-width: 0.1;
-    stroke: rgb(42, 42, 42);
+    stroke: rgb(233, 233, 233);
   }
 }
 </style>
