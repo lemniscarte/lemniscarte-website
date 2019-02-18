@@ -9,7 +9,7 @@
         xmlns:cc="http://creativecommons.org/ns#"
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         viewBox="-35 -10 200 80">
-        <defs>
+        <!-- <defs>
           <filter id="dropshadow" height="130%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> 
             <feOffset dx="3" dy="3" result="offsetblur"/>
@@ -21,7 +21,7 @@
               <feMergeNode in="SourceGraphic"/> 
             </feMerge>
           </filter>
-        </defs>
+        </defs> -->
     <path class="path first"
           id="1"
           d="m97.089 0.099757c14.808 0 26.812 12.001 26.812 26.806s-12.004 26.806-26.812 26.806c-27.236 0-47.121-53.612-74.357-53.612-14.808 0-26.812 12.001-26.812 26.806s12.004 26.806 26.812 26.806c27.236 0 47.121-53.612 74.357-53.612z"
@@ -86,7 +86,7 @@ svg {
   stroke-dasharray: 358px;
   stroke-dashoffset: 358px;
   animation: dash 6s ease-in-out forwards;
-  stroke-width: 2;
+  stroke-width: 0.2;
   /* filter: url(#dropshadow); */
 }
 
@@ -138,7 +138,7 @@ svg {
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
-    stroke-width: 0.1;
+    stroke-width: 0.3;
     stroke: rgb(233, 233, 233);
   }
 }

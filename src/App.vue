@@ -1,5 +1,9 @@
 <template>
-  <div id="app" v-hammer:swipe="onSwipe">
+  <div
+    id="app"
+    v-hammer:swipe="onSwipe"
+    :style="{ width: windowWidth + 'px', height: windowHeight + 'px' }"
+  >
     <TopMenu @pageWasChanged="clickPageChange($event)"/>
     <div id="app-wrapper">
       <div class="left">
@@ -37,7 +41,9 @@ export default {
     return {
       selectedComponent: "MainPage",
       componentsList: ["MainPage", "Music", "Sounds", "Bio", "Contact"],
-      animationType: ""
+      animationType: "",
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth
     };
   },
   components: {
@@ -86,6 +92,14 @@ export default {
     // addActiveClass() {
 
     // }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowHeight = window.innerHeight;
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>
@@ -93,10 +107,28 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css?family=Nunito:300");
 
+/* html{
+  background: linear-gradient(
+  160deg,
+  #303668 0%,
+  #784c58 62%,
+  #784c58 80%,
+  #986c48 100%
+);
+} */
+
 body {
-  background-color: rgb(255, 255, 255);
-  background: linear-gradient(120deg, #02060a, #15294b);
-  color: rgba(231, 231, 231, 0.75);
+  /* background-color: rgb(255, 255, 255); */
+  /* background: linear-gradient(120deg, #02060a, #15294b); */
+  min-height: 300px;
+  background: linear-gradient(
+    160deg,
+    #303668 0%,
+    #784c58 62%,
+    #784c58 80%,
+    #986c48 100%
+  );
+  color: rgba(231, 231, 231, 0.85);
   font-family: "Nunito", sans-serif;
   font-weight: 300;
   touch-action: pan-y !important;
@@ -108,14 +140,15 @@ ul {
   padding-left: 0;
 }
 
-#app {
+/* #app {
   height: 100vh;
-}
+  width: auto;
+} */
 
 #app-wrapper {
   display: grid;
   grid-template-areas: "left center right";
-  grid-template-columns: minmax(1px, 1fr) minmax(300px, 800px) minmax(1px, 1fr);
+  grid-template-columns: minmax(1px, 1fr) minmax(50px, 800px) minmax(1px, 1fr);
 }
 
 #spacer {
@@ -133,6 +166,7 @@ h1 {
   text-align: center;
   height: 100%;
   padding: 0px 20px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .left-enter-active,

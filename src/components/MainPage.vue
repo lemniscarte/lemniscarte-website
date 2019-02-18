@@ -21,8 +21,8 @@ export default {
 </script>
 
 <style>
-#img-holder {
+/* #img-holder {
   height: calc(4vw + 4vh + 30px);
   vertical-align: middle;
-}
+} */
 </style>
