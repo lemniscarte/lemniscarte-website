@@ -174,5 +174,6 @@ button:hover {
 }
 .song-info {
   font-size: 12px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
 }
 </style>
