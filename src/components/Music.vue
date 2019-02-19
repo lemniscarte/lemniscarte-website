@@ -14,12 +14,6 @@ export default {
   },
   data() {
     return {};
-  },
-  methods: {},
-  computed: {
-    currentMusic() {
-      return this.allMusic[this.selectedTrack];
-    }
   }
 };
 </script>
