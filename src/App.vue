@@ -41,7 +41,9 @@ export default {
     return {
       selectedComponent: "MainPage",
       componentsList: ["MainPage", "Music", "Sounds", "Bio", "Contact"],
+      //for left or right swipes
       animationType: "",
+      //use window size calculation in order to refresh when changed
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth
     };
@@ -89,10 +91,12 @@ export default {
     componentsListLength() {
       return this.componentsList.length - 1;
     }
+    //TODO: add a class for the selected page button up top
     // addActiveClass() {
 
     // }
   },
+  //calculate window dimensions on mounted
   mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
@@ -106,16 +110,6 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Nunito:300");
-
-/* html{
-  background: linear-gradient(
-  160deg,
-  #303668 0%,
-  #784c58 62%,
-  #784c58 80%,
-  #986c48 100%
-);
-} */
 
 body {
   min-height: 300px;

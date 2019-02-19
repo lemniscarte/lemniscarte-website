@@ -1,8 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
 
+//allow for swiping between pages
 import { VueHammer } from "vue2-hammer";
 
+//minimum of 50px of travel to trigger
 VueHammer.config.swipe = {
   direction: "horizontal",
   threshold: 50
@@ -12,6 +14,7 @@ Vue.use(VueHammer);
 
 Vue.config.productionTip = false;
 
+//filter for translating seconds into minute:senconds format
 Vue.filter("musicTime", function(value) {
   let h = parseInt(Math.floor(value / 360));
   let m = parseInt(Math.floor((value - h * 360) / 60));

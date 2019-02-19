@@ -25,21 +25,26 @@
 </template>
 
 <script>
+//music handler library
 import { Howl } from "howler";
 
+//class for player, using index to keep track of track. ha!
 let Player = function(playlist) {
   this.playlist = playlist;
   this.index = 0;
 };
 
+//flesh out all methods needed
 Player.prototype = {
   play: function(index) {
     var self = this;
     var sound;
 
+    //failsafe for type
     index = typeof index === "number" ? index : self.index;
     var data = self.playlist[index];
 
+    //actually create the howl objects - MOVED TO A LIFECYCLE HOOK! DELETE?
     if (data.howl) {
       sound = data.howl;
     } else {
@@ -48,6 +53,7 @@ Player.prototype = {
         html5: true
       });
     }
+    //only then play, adjust index
     sound.play();
     self.index = index;
   },
@@ -70,28 +76,32 @@ Player.prototype = {
     var self = this;
     var index = 0;
     index = self.index + mod;
+    //first check if mod is out of array bounds
     if (index < 0) {
       index = self.playlist.length + mod;
     }
     if (index >= self.playlist.length) {
       index = 0;
     }
-
+    //only then call skipTo
     self.skipTo(index);
   },
 
   skipTo: function(index) {
     var self = this;
+    //stop previous playback
     if (self.playlist[self.index].howl) {
       self.playlist[self.index].howl.stop();
     }
+    //only then play next track
     self.play(index);
   }
 };
 
+//put tracks here, use as description holder as well
 let player = new Player([
   {
-    title: "Banana Clip by Miguel",
+    title: "Banana Clip",
     file: "bananaclip.mp3",
     description: "A super groovy song",
     howl: null
@@ -142,7 +152,7 @@ export default {
     }
   },
   created: function() {
-    // INIT ALL howl OBJECTS FOR LATER USE
+    //init all howl objects in playlist for later use (or else fetching is attempted on non-existing properties)
     player.playlist.forEach(track => {
       track.howl = new Howl({
         src: [track.file],
