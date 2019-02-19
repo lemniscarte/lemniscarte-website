@@ -12,7 +12,12 @@
     <br>
     <p>
       Song description
+      <br>
       {{ this.manager.playlist[this.currentSong].title }}
+      <br>
+      {{ this.manager.playlist[this.currentSong].howl.duration() | musicTime }}
+      <br>
+      {{ this.manager.playlist[this.currentSong].description }}
     </p>
   </span>
   <br>
@@ -88,16 +93,19 @@ let player = new Player([
   {
     title: "Banana Clip by Miguel",
     file: "bananaclip.mp3",
+    description: "A super groovy song",
     howl: null
   },
   {
     title: "The Island of Shame",
     file: "islandshame.mp3",
+    description: "Metal meets hardcore",
     howl: null
   },
   {
     title: "Never Took the Time",
     file: "nevertook.mp3",
+    description: "ALL",
     howl: null
   }
 ]);
@@ -110,7 +118,6 @@ export default {
       manager: player
     };
   },
-  props: [],
   methods: {
     togglePlayback() {
       this.isPlaying = !this.isPlaying;
@@ -133,6 +140,15 @@ export default {
       }
       player.skip(mod);
     }
+  },
+  created: function() {
+    // INIT ALL howl OBJECTS FOR LATER USE
+    player.playlist.forEach(track => {
+      track.howl = new Howl({
+        src: [track.file],
+        html5: true
+      });
+    });
   }
 };
 </script>
