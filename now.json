@@ -1,7 +1,7 @@
 {
   "name": "lemniscarte",
   "alias": "lemniscarte",
-  "public": "dist",
+  "public": true,
   "files": [
     "dist"
   ],
