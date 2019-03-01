@@ -10,7 +10,10 @@
   <br>
   <span class="song-info">
     <br>
-    <p>
+    <p v-if="this.manager.playlist[this.currentSong].howl.state() === 'loading'">
+      Loading...
+    </p>
+    <p v-else>
       Song description
       <br>
       {{ this.manager.playlist[this.currentSong].title }}
@@ -18,6 +21,8 @@
       {{ this.manager.playlist[this.currentSong].howl.duration() | musicTime }}
       <br>
       {{ this.manager.playlist[this.currentSong].description }}
+      <br>
+      <!-- {{ this.manager.playlist[this.currentSong].howl.state() === 'loading' }} -->
     </p>
   </span>
   <br>
@@ -44,7 +49,7 @@ Player.prototype = {
     index = typeof index === "number" ? index : self.index;
     var data = self.playlist[index];
 
-    //actually create the howl objects - MOVED TO A LIFECYCLE HOOK! DELETE?
+    //actually create the howl objects
     if (data.howl) {
       sound = data.howl;
     } else {
@@ -99,6 +104,7 @@ Player.prototype = {
 };
 
 //put tracks here, use as description holder as well
+//TODO: refactor into its own components
 let player = new Player([
   {
     title: "Banana Clip",
@@ -152,7 +158,8 @@ export default {
     }
   },
   created: function() {
-    //init all howl objects in playlist for later use (or else fetching is attempted on non-existing properties)
+    //init all howl objects in playlist for later use
+    //(or else fetching is attempted on non-existing properties)
     player.playlist.forEach(track => {
       track.howl = new Howl({
         src: [track.file],
