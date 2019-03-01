@@ -7,22 +7,16 @@
   <br>
   <br>
   <br>
-  <br>
   <span class="song-info">
-    <br>
     <p v-if="this.manager.playlist[this.currentSong].howl.state() === 'loading'">
       Loading...
     </p>
     <p v-else>
-      Song description
-      <br>
       {{ this.manager.playlist[this.currentSong].title }}
       <br>
       {{ this.manager.playlist[this.currentSong].howl.duration() | musicTime }}
       <br>
       {{ this.manager.playlist[this.currentSong].description }}
-      <br>
-      <!-- {{ this.manager.playlist[this.currentSong].howl.state() === 'loading' }} -->
     </p>
   </span>
   <br>
@@ -188,6 +182,9 @@ button:hover {
   box-shadow: 3px 5px 10px 2px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
   transition: all ease 0.4s;
+}
+button:focus {
+  outline: none;
 }
 .song-info {
   font-size: 12px;

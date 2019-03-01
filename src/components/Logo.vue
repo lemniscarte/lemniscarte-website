@@ -85,7 +85,7 @@ svg {
   stroke: rgb(42, 42, 42);
   stroke-dasharray: 358px;
   stroke-dashoffset: 358px;
-  animation: dash 6s ease-in-out forwards;
+  animation: dash 2s ease-in-out forwards;
   stroke-width: 0.2;
   /* filter: url(#dropshadow); */
 }

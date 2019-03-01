@@ -3,7 +3,7 @@
   "alias": "lemniscarte",
   "public": true,
   "files": [
-    "dist"
+    "./dist"
   ],
   "version": 2
 }

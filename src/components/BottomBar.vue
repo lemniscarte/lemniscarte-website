@@ -21,7 +21,6 @@ export default {
   bottom: 0px;
   color: rgba(209, 209, 209, 0.739);
   background-color: rgb(42, 42, 42);
-  box-shadow: 0 15px 50px 15px rgba(0, 0, 0, 0.513);
   line-height: 1px;
 }
 </style>
