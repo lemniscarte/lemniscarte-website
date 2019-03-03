@@ -137,13 +137,12 @@ body {
   touch-action: pan-y !important;
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    160deg,
-    #101229,
-    #1e2244 10%,
-    #471e29 62%,
-    #4e1926 80%,
-    #290b0b
+  background: radial-gradient(
+    circle at 0 0,
+    hsl(0, 0%, 0%) 0%,
+    hsl(234, 54%, 11%) 10%,
+    hsl(346, 76%, 3%) 62%,
+    hsl(345, 72%, 10%) 80%
   );
 }
 
@@ -244,11 +243,13 @@ h1 {
 
 .noise {
   position: relative;
-  z-index: -1;
+  opacity: 1;
 }
 
+/* TODO apply an initial opacity of 1 and transition to 0.3 on load over about 1 second */
 .noise:before {
-  opacity: 0.05;
+  transition: all ease 0.8s;
+  opacity: 0.3;
   content: "";
   position: fixed;
   top: 0;
@@ -256,7 +257,7 @@ h1 {
   left: 0;
   right: 0;
   z-index: -1;
-  background-image: url("./assets/bg.jpeg");
+  background-image: url("./assets/deathstar.jpg");
   background-size: cover;
 }
 

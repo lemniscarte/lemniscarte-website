@@ -39,7 +39,7 @@ Player.prototype = {
     var self = this;
     var sound;
 
-    //failsafe for type
+    //failsafe for argument type
     index = typeof index === "number" ? index : self.index;
     var data = self.playlist[index];
 
@@ -101,21 +101,113 @@ Player.prototype = {
 //TODO: refactor into its own components
 let player = new Player([
   {
-    title: "Banana Clip",
-    file: "bananaclip.mp3",
-    description: "A super groovy song",
+    title: "Moody, suspenseful, treacherous",
+    file: "music/slow.mp3",
+    description: "A loop for a dramatic scene",
     howl: null
   },
   {
-    title: "The Island of Shame",
-    file: "islandshame.mp3",
-    description: "Metal meets hardcore",
+    title: "Noir",
+    file: "music/noir.mp3",
+    description: "A cinematic cyberpunk theme",
     howl: null
   },
   {
-    title: "Never Took the Time",
-    file: "nevertook.mp3",
-    description: "ALL",
+    title: "Koto + Chill beats",
+    file: "music/kotochill.mp3",
+    description: "Dance performance track",
+    howl: null
+  },
+  {
+    title: "Courage",
+    file: "music/courage.mp3",
+    description: "Western theme",
+    howl: null
+  },
+  {
+    title: "Game Background",
+    file: "music/resistjamaction.mp3",
+    description: "Level loop of a ResistJam game",
+    howl: null
+  },
+  {
+    title: "Game Intro",
+    file: "music/resistjamintro.mp3",
+    description: "Intro to a ResistJam game",
+    howl: null
+  },
+  {
+    title: "16-bits Action",
+    file: "music/snes.mp3",
+    description: "Faithful reproduction of SNES timbres",
+    howl: null
+  },
+  {
+    title: "Timed Meditation",
+    file: "music/relaxingmeditation.mp3",
+    description: "Take 3 minutes off and reenergize",
+    howl: null
+  },
+  {
+    title: "Skateboarding Video",
+    file: "music/shortintro.mp3",
+    description: "A stinger for the intro",
+    howl: null
+  },
+  {
+    title: "Hope & Despair",
+    file: "music/rimsky.mp3",
+    description: "Based on Rimsky's Principles of Orchestration",
+    howl: null
+  },
+  {
+    title: "8-bits Compilation",
+    file: "music/8bit1.mp3",
+    description: "Samples of tracks made with NES hardware limitations in mind",
+    howl: null
+  },
+  {
+    title: "8-bits Compilation II",
+    file: "music/8bit2.mp3",
+    description:
+      "More samples of tracks made with NES hardware limitations in mind",
+    howl: null
+  },
+  {
+    title: "Surf Competition",
+    file: "music/world.mp3",
+    description:
+      "A tune from a side project, DeJaneiro Jazz, used in a video shoot of a surfing competition in Brazil",
+    howl: null
+  },
+  {
+    title: "Nu-Jazz",
+    file: "music/nu.mp3",
+    description: "A tune all the way from 2005",
+    howl: null
+  },
+  {
+    title: "Energy",
+    file: "music/hardcore.mp3",
+    description: "All instruments in this track were made 'in the box'",
+    howl: null
+  },
+  {
+    title: "Heavy!",
+    file: "music/metal.mp3",
+    description: "Used in a surf video back in 2008",
+    howl: null
+  },
+  {
+    title: "CPU-Wave",
+    file: "music/computery.mp3",
+    description: "Glithcy & sweet",
+    howl: null
+  },
+  {
+    title: "Samba",
+    file: "music/samba.mp3",
+    description: "Wound up on a surf video, surprisingly",
     howl: null
   }
 ]);
@@ -187,7 +279,7 @@ button:focus {
   outline: none;
 }
 .song-info {
-  font-size: 12px;
+  font-size: 13px;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
 }
 </style>

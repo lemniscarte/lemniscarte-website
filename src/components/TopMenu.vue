@@ -22,6 +22,7 @@ export default {
 
 <style>
 #top-menu {
+  z-index: 1;
   height: 3em;
   text-align: center;
   font-size: 0.8em;

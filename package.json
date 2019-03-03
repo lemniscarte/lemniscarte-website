@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "npm run build && now ./dist --public && now alias"
+    "deploy": "npm run build && now ./dist -A ../now.json --public && now alias"
   },
   "dependencies": {
     "howler": "^2.0.15",
