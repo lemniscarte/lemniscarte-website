@@ -20,7 +20,7 @@ export default {
   position: fixed;
   bottom: 0px;
   color: rgba(209, 209, 209, 0.739);
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(8, 8, 8);
   line-height: 1px;
 }
 </style>

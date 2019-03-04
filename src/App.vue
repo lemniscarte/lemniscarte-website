@@ -148,6 +148,9 @@ body {
 
 #application {
   min-height: 100vh;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
 }
 
 /* body:before {
@@ -164,6 +167,7 @@ body {
 } */
 
 #app-wrapper {
+  text-align: center;
   min-height: 100vh;
   display: grid;
   grid-template-areas: "left center right";
@@ -171,7 +175,8 @@ body {
 }
 
 #spacer {
-  height: calc(4vw + 4vh);
+  height: 17%;
+  min-height: 70px;
 }
 
 ul {
@@ -182,6 +187,8 @@ h1 {
   font-size: calc(3vw + 4vh);
   font-weight: 300;
   text-shadow: 0 10px 4vh rgba(0, 0, 0, 1);
+  /* margin: 30px; */
+  margin-top: 0;
 }
 
 .blurb {
@@ -230,6 +237,12 @@ h1 {
   text-align: center;
   grid-area: center;
   overflow: hidden;
+  /* display: flex; */
+  /* display: -webkit-box;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-box-align: center; */
+  /* max-width: 800px; */
 }
 
 .right {
