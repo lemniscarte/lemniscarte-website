@@ -19,8 +19,8 @@ export default {
   font-size: 0.5em;
   position: fixed;
   bottom: 0px;
-  color: rgba(209, 209, 209, 0.739);
-  background-color: rgb(8, 8, 8);
+  color: rgba(209, 209, 209, 0.75);
+  background-color: rgba(0, 0, 0, 0.75);
   line-height: 1px;
 }
 </style>

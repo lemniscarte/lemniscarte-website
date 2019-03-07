@@ -1,9 +1,9 @@
 <template>
 <div>
-  <button @click="togglePlayback()">{{ isPlaying ? "HOLD" : "PLAY" }}</button>
-  <button @click="stopPlayback()">STOP</button>
-  <button @click="switchTrack(-1)">BACK</button>
-  <button @click="switchTrack(1)">NEXT</button>
+  <button ref="playBtn" @click="togglePlayback()">{{ isPlaying ? "HOLD" : "PLAY" }}</button>
+  <button ref="stopBtn" @click="stopPlayback()">STOP</button>
+  <button ref="backBtn" @click="switchTrack(-1)">BACK</button>
+  <button ref="nextBtn" @click="switchTrack(1)">NEXT</button>
   <br>
   <br>
   <br>
@@ -57,6 +57,12 @@ export default {
           title: "Courage",
           file: "music/courage.mp3",
           description: "Western theme",
+          howl: null
+        },
+        {
+          title: "Black Widow",
+          file: "music/blackwidow.mp3",
+          description: "Theme for a circus performance",
           howl: null
         },
         {
@@ -139,14 +145,17 @@ export default {
   },
   methods: {
     togglePlayback() {
+      this.animButton(this.$refs.playBtn);
       this.isPlaying = !this.isPlaying;
       return this.isPlaying ? this.player.play() : this.player.pause();
     },
     stopPlayback() {
+      this.animButton(this.$refs.stopBtn);
       this.isPlaying = false;
       this.player.stop();
     },
     switchTrack(mod) {
+      this.animButton(mod == 1 ? this.$refs.nextBtn : this.$refs.backBtn);
       if (!this.isPlaying) {
         this.isPlaying = true;
       }
@@ -158,6 +167,16 @@ export default {
         this.currentSong = this.player.playlist.length - 1;
       }
       this.player.skip(mod);
+    },
+    animButton(element) {
+      element.classList.add("pop");
+
+      element.addEventListener("animationend", function() {
+        element.classList.remove("pop");
+        element.removeEventListener("animationend", function() {
+          return;
+        });
+      });
     }
   },
   created: function() {
@@ -183,19 +202,6 @@ export default {
         //only then play, adjust index
         sound.play();
         self.index = index;
-
-        //actually create the howl objects
-        // if (data.howl) {
-        //   sound = data.howl;
-        // } else {
-        //   sound = data.howl = new Howl({
-        //     src: [data.file],
-        //     html5: true
-        //   });
-        // }
-
-        //if using preload: false upon creation
-        // sound.load();
       },
 
       pause: function() {
@@ -209,6 +215,7 @@ export default {
         var sound = self.playlist[self.index].howl;
         if (sound) {
           sound.stop();
+          //so it doesn't bog down the client
           sound.unload();
         }
       },
@@ -271,14 +278,18 @@ button {
   border-radius: 100%;
   font-size: calc(4vmin - 1vw);
   font-family: "Nunito";
-  /* box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.4); */
   transition: all ease 0.4s;
 }
-button:hover {
-  box-shadow: 3px 5px 10px 2px rgba(0, 0, 0, 0.9);
-  transform: translateY(-2px);
-  transition: all ease 0.4s;
-  opacity: 0.9;
+.pop {
+  transition: all ease 0.3s;
+  animation-duration: 0.3s;
+  animation-name: popanim;
+}
+@keyframes popanim {
+  50% {
+    opacity: 1;
+    box-shadow: 0.3vw 0.3vw 10px 2px rgba(0, 0, 0, 1);
+  }
 }
 button:focus {
   outline: none;

@@ -95,15 +95,6 @@ export default {
 
     // }
   },
-  //debugging tool for window resizing issues
-  // watch: {
-  //   windowHeight: (val, oldVal) => {
-  //     console.log("height: ", val, oldVal);
-  //   },
-  //   windowWidth: (val, oldVal) => {
-  //     console.log("width: ", val, oldVal);
-  //   }
-  // },
   //calculate window dimensions on mounted
   mounted() {
     this.$nextTick(() => {
@@ -128,8 +119,6 @@ html {
 }
 
 body {
-  /* width: auto;
-  height: auto; */
   min-height: 300px;
   color: rgba(231, 231, 231, 0.85);
   font-family: "Nunito", sans-serif;
@@ -153,19 +142,6 @@ body {
   justify-content: center;
 }
 
-/* body:before {
-  opacity: 0.05;
-  content: "";
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url("./assets/bg.jpeg");
-  background-size: cover;
-} */
-
 #app-wrapper {
   text-align: center;
   min-height: 100vh;
@@ -187,7 +163,6 @@ h1 {
   font-size: calc(3vw + 4vh);
   font-weight: 300;
   text-shadow: 0 10px 4vh rgba(0, 0, 0, 1);
-  /* margin: 30px; */
   margin-top: 0;
 }
 
@@ -237,12 +212,6 @@ h1 {
   text-align: center;
   grid-area: center;
   overflow: hidden;
-  /* display: flex; */
-  /* display: -webkit-box;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-box-align: center; */
-  /* max-width: 800px; */
 }
 
 .right {

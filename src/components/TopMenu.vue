@@ -29,9 +29,9 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgb(8, 8, 8);
+  background-color: rgba(0, 0, 0, 0.75);
   color: rgb(209, 209, 209);
-  box-shadow: 0 -10px 100px 5px rgba(0, 0, 0, 0.513);
+  box-shadow: 0 -10px 100px 5px rgba(0, 0, 0, 0.7);
 }
 
 button menu-btn {

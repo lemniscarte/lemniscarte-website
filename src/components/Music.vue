@@ -1,16 +1,16 @@
 <template>
 <div>
   <h1>music</h1>
-  <Player/>
+  <MusicPlayer/>
 </div>
 </template>
 
 <script>
-import Player from "./Player.vue";
+import MusicPlayer from "./MusicPlayer.vue";
 
 export default {
   components: {
-    Player
+    MusicPlayer
   },
   data() {
     return {};
