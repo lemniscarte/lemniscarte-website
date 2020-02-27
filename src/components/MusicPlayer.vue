@@ -1,27 +1,30 @@
 <template>
-<div>
-  <button ref="playBtn" @click="togglePlayback()">{{ isPlaying ? "HOLD" : "PLAY" }}</button>
-  <button ref="stopBtn" @click="stopPlayback()">STOP</button>
-  <button ref="backBtn" @click="switchTrack(-1)">BACK</button>
-  <button ref="nextBtn" @click="switchTrack(1)">NEXT</button>
-  <br>
-  <br>
-  <br>
-  <p>
-    <p class="blurb"
-      v-if="this.player.playlist[this.currentSong].howl.state() === 'loading'">
+  <div>
+    <button ref="playBtn" @click="togglePlayback()">
+      {{ isPlaying ? "HOLD" : "PLAY" }}
+    </button>
+    <button ref="stopBtn" @click="stopPlayback()">STOP</button>
+    <button ref="backBtn" @click="switchTrack(-1)">BACK</button>
+    <button ref="nextBtn" @click="switchTrack(1)">NEXT</button>
+    <br />
+    <br />
+    <br />
+    <p></p>
+    <p
+      class="blurb"
+      v-if="this.player.playlist[this.currentSong].howl.state() === 'loading'"
+    >
       Loading...
     </p>
-    <p class="blurb"
-      v-else>
+    <p class="blurb" v-else>
       {{ this.player.playlist[this.currentSong].title }}
-      <br>
+      <br />
       {{ this.player.playlist[this.currentSong].howl.duration() | musicTime }}
-      <br>
+      <br />
       {{ this.player.playlist[this.currentSong].description }}
     </p>
-  <br>
-</div>
+    <br />
+  </div>
 </template>
 
 <script>

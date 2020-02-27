@@ -1,25 +1,19 @@
 <template>
-  <div
-    id="application"
-    v-hammer:swipe="onSwipe"
-  >
-    <TopMenu @pageWasChanged="clickPageChange($event)"/>
+  <div id="application" v-hammer:swipe="onSwipe">
+    <TopMenu @pageWasChanged="clickPageChange($event)" />
     <div id="app-wrapper" class="noise">
-      <div class="left">
-      </div>
+      <div class="left"></div>
       <div class="center">
         <div id="spacer"></div>
         <transition :name="animationType" mode="out-in">
           <keep-alive>
-            <component :is="this.selectedComponent">
-            </component>
+            <component :is="this.selectedComponent"> </component>
           </keep-alive>
         </transition>
       </div>
-      <div class="right">
-      </div>
+      <div class="right"></div>
     </div>
-    <BottomBar/>
+    <BottomBar />
   </div>
 </template>
 
@@ -211,7 +205,7 @@ h1 {
 .center {
   text-align: center;
   grid-area: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .right {

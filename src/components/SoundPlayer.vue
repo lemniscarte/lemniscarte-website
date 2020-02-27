@@ -1,30 +1,79 @@
 <template>
-<div>
-  <div class="soundgrid">
-    <div class="soundbtn cornerupleft"      ref="btnA" @click="playSound(0, $refs.btnA)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnB" @click="playSound(1, $refs.btnB)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnC" @click="playSound(2, $refs.btnC)">&#x25B8;</div>
-    <div class="soundbtn cornerupright"     ref="btnD" @click="playSound(3, $refs.btnD)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnE" @click="playSound(4, $refs.btnE)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnF" @click="playSound(5, $refs.btnF)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnG" @click="playSound(6, $refs.btnG)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnH" @click="playSound(7, $refs.btnH)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnI" @click="playSound(8, $refs.btnI)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnJ" @click="playSound(9, $refs.btnJ)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnK" @click="playSound(10, $refs.btnK)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnL" @click="playSound(11, $refs.btnL)">&#x25B8;</div>
-    <div class="soundbtn cornerbottomleft"  ref="btnM" @click="playSound(12, $refs.btnM)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnN" @click="playSound(13, $refs.btnN)">&#x25B8;</div>
-    <div class="soundbtn"                   ref="btnO" @click="playSound(14, $refs.btnO)">&#x25B8;</div>
-    <div class="soundbtn cornerbottomright" ref="btnP" @click="playSound(15, $refs.btnP)">&#x25B8;</div>
-  </div>
-  <br>
-  <p>
+  <div>
+    <div class="soundgrid">
+      <div
+        class="soundbtn cornerupleft"
+        ref="btnA"
+        @click="playSound(0, $refs.btnA)"
+      >
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnB" @click="playSound(1, $refs.btnB)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnC" @click="playSound(2, $refs.btnC)">
+        &#x25B8;
+      </div>
+      <div
+        class="soundbtn cornerupright"
+        ref="btnD"
+        @click="playSound(3, $refs.btnD)"
+      >
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnE" @click="playSound(4, $refs.btnE)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnF" @click="playSound(5, $refs.btnF)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnG" @click="playSound(6, $refs.btnG)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnH" @click="playSound(7, $refs.btnH)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnI" @click="playSound(8, $refs.btnI)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnJ" @click="playSound(9, $refs.btnJ)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnK" @click="playSound(10, $refs.btnK)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnL" @click="playSound(11, $refs.btnL)">
+        &#x25B8;
+      </div>
+      <div
+        class="soundbtn cornerbottomleft"
+        ref="btnM"
+        @click="playSound(12, $refs.btnM)"
+      >
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnN" @click="playSound(13, $refs.btnN)">
+        &#x25B8;
+      </div>
+      <div class="soundbtn" ref="btnO" @click="playSound(14, $refs.btnO)">
+        &#x25B8;
+      </div>
+      <div
+        class="soundbtn cornerbottomright"
+        ref="btnP"
+        @click="playSound(15, $refs.btnP)"
+      >
+        &#x25B8;
+      </div>
+    </div>
+    <br />
+    <p></p>
     <p class="blurb">
-      A sound board with 16 gracious bits of sound I had fun making for work or otherwise.
+      A sound board with 16 gracious bits of sound I had fun making for work or
+      otherwise.
     </p>
-  <br>
-</div>
+    <br />
+  </div>
 </template>
 
 <script>
@@ -112,12 +161,12 @@ export default {
           i == 1
             ? "top left"
             : i == sides
-              ? "top right"
-              : i == sides * sides - sides
-                ? "bottom left"
-                : i == sides * sides
-                  ? "bottom right"
-                  : i
+            ? "top right"
+            : i == sides * sides - sides
+            ? "bottom left"
+            : i == sides * sides
+            ? "bottom right"
+            : i
         );
       }
     },

@@ -1,8 +1,8 @@
 <template>
-<div>
-  <h1>music</h1>
-  <MusicPlayer/>
-</div>
+  <div>
+    <h1>music</h1>
+    <MusicPlayer />
+  </div>
 </template>
 
 <script>
@@ -18,5 +18,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

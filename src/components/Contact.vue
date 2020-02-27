@@ -1,23 +1,28 @@
 <template>
-<div>
-  <h1>contact</h1>
-    <p class="blurb">The best way to get in touch is vie e-mail.<br>Old-school, I know, but I do love it.</p>
+  <div>
+    <h1>contact</h1>
+    <p class="blurb">
+      The best way to get in touch is vie e-mail.<br />Old-school, I know, but I
+      do love it.
+    </p>
     <div class="btnwrapper">
       <a href="mailto:contact@lemniscarte.com">
         <div class="contactbtn">
-          <img src="micon.svg" alt="e-mail">
+          <img src="micon.svg" alt="e-mail" />
         </div>
       </a>
     </div>
-    <p class="blurb">Other than that, I hang around twitter<br>(quietly, for the most part).</p>
+    <p class="blurb">
+      Other than that, I hang around twitter<br />(quietly, for the most part).
+    </p>
     <div class="btnwrapper">
       <a href="https://twitter.com/lemniscarte">
         <div class="contactbtn">
-          <img src="ticon.svg" alt="twitter">
+          <img src="ticon.svg" alt="twitter" />
         </div>
       </a>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
